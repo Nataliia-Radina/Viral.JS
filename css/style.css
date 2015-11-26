@@ -109,12 +109,10 @@ html {
 	background-color: #fcfbf8;
 	font-family: "PT Mono";
 	font-weight: bold;
-	width: 442px;
 }
 
 .example p {
-	padding-left: 15px;
-	margin: 15px 0;
+	margin: 15px;
 }
 
 .example p:first-child {
@@ -132,6 +130,63 @@ html {
 
 .add-buttons {
 	margin: 50px 5% 20px 0;
-	float: right;	
+	float: right;
+}
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 900px) {
+	.example p {
+		font-size: 10px;
+	}
+}
+
+
+@media (max-width: 785px) {
+	.about,
+	.example {
+		width: 95%;
+	}
+
+	.about,
+	.example {
+		margin-right: 5%;
+	}
+
+	.example p {
+		font-size: 12px;
+		width: 380px;
+		margin: 15px auto;
+		padding: 0 15px;
+	}
+
+	.image {
+		width: 100%;
+	}
+	
+	.add-buttons {
+	float: none;
+	width: 355px;
+	margin: 20px auto;
+	display: block;
+	padding-right: 5%;
+}
+
+}
+
+@media (max-width: 450px) {
+
+	.page-heading {
+	margin: 90px auto 60px auto;
+	width: 95%;
+	}
+	
+	.example p {
+		font-size: 10px;
+	}
 }
 
