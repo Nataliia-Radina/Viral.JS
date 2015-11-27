@@ -19,6 +19,65 @@ html {
 	padding: 0;
 }
 
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("../fonts/HelveticaNeue.eot") format("embedded-opentype");
+	src: url("../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype");
+	src: url("../fonts/HelveticaNeue.woff") format("woff"),
+		url("../fonts/HelveticaNeue.ttf") format("truetype"),
+		url("../fonts/HelveticaNeue.svg#bebas_neuebold") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Bebas Neue bold";
+    src: url("../fonts/bebasneue_bold-webfont.eot");
+    src: url("../fonts/bebasneue_bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/bebasneue_bold-webfont.woff") format("woff"),
+         url("../fonts/bebasneue_bold-webfont.ttf") format("truetype"),
+         url("../fonts/bebasneue_bold-webfont.svg#bebas_neuebold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Bebas Neue book";
+    src: url("../fonts/bebasneue_book-webfont.eot");
+    src: url("../fonts/bebasneue_book-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/bebasneue_book-webfont.woff") format("woff"),
+         url("../fonts/bebasneue_book-webfont.ttf") format("truetype"),
+         url("../fonts/bebasneue_book-webfont.svg#bebas_neuebook") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bebas Neue thin";
+    src: url("../fonts/bebasneue_thin-webfont.eot");
+    src: url("../fonts/bebasneue_thin-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/bebasneue_thin-webfont.woff") format("woff"),
+         url("../fonts/bebasneue_thin-webfont.ttf") format("truetype"),
+         url("../fonts/bebasneue_thin-webfont.svg#bebas_neuethin") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PT Mono bold";
+    src: url("../fonts/ptmono-bold-webfont.eot");
+    src: url("../fonts/ptmono-bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ptmono-bold-webfont.woff") format("woff"),
+         url("../fonts/ptmono-bold-webfont.ttf") format("truetype"),
+         url("../fonts/ptmono-bold-webfont.svg#pt_monobold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .page-heading {
 	margin: 90px auto 60px auto;
 	width: 425px;
@@ -26,14 +85,14 @@ html {
 }
 
 .page-heading p {
-	font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+	font-family: "Bebas Neue bold", Arial, Helvetica, sans-serif;
 	font-size: 120px;	
 	margin: 0;
 	font-weight: 700; 
 }
 
 .page-heading h1{
-	font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+	font-family: "Bebas Neue thin", Arial, Helvetica, sans-serif;
 	font-size: 35px;
 	margin: 20px 0 25px 0;
 	font-weight: 100;
@@ -64,20 +123,24 @@ html {
 
 .nav-link {
 	color: #fb8925;
-	font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+	font-family: "Bebas Neue book", Arial, Helvetica, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
 }
 
 
 .nav-link:hover {
-	color: #0c97ef;	
+	color: #1188d4;	
 }
 
 .main-content {
 	margin: 0 0 5% 5%;
 	position: relative;
 	font-size: 0;
+}
+
+.mobile {
+	display: none;
 }
 
 .ib {
@@ -98,7 +161,7 @@ html {
 }
 
 .about h3 {
-	font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+	font-family: "Bebas Neue book", Arial, Helvetica, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
 	margin: 40px 0 15px 0;
@@ -107,7 +170,7 @@ html {
 .example {
 	border: 1px solid #f3f1ea;
 	background-color: #fcfbf8;
-	font-family: "PT Mono";
+	font-family: "PT Mono bold";
 	font-weight: bold;
 }
 
@@ -147,6 +210,16 @@ html {
 
 
 @media (max-width: 785px) {
+
+	.desktop {
+	display: none;
+	
+	}
+
+	.mobile {
+		display: block;
+	}
+
 	.about,
 	.example {
 		width: 95%;
@@ -172,7 +245,6 @@ html {
 	float: none;
 	width: 355px;
 	margin: 20px auto;
-	display: block;
 	padding-right: 5%;
 }
 
