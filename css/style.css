@@ -226,15 +226,28 @@ html {
 	}
 
 	.about,
+
+	.about{
+		margin: 0 5% 10px 0;
+	}
+
 	.example {
+		margin-top: 20px;
 		margin-right: 5%;
+			padding: 0 15px;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
 	}
 
 	.example p {
 		font-size: 12px;
 		width: 380px;
 		margin: 15px auto;
-		padding: 0 15px;
+	}
+
+	.about h3 {
+		text-align: center;
 	}
 
 	.image {
@@ -244,7 +257,7 @@ html {
 	.add-buttons {
 	float: none;
 	width: 355px;
-	margin: 20px auto;
+	margin: 40px auto;
 	padding-right: 5%;
 }
 
