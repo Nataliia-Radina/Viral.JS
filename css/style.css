@@ -191,6 +191,19 @@ html {
 	max-width: 100%;
 }
 
+#img {
+	-webkit-transition-property: opacity;
+	   -moz-transition-property: opacity;
+	    -ms-transition-property: opacity;
+	     -o-transition-property: opacity;
+	        transition-property: opacity;
+	    -webkit-transition-duration: 200ms;
+	       -moz-transition-duration: 200ms;
+	        -ms-transition-duration: 200ms;
+	         -o-transition-duration: 200ms;
+	            transition-duration: 200ms;
+}
+
 .add-buttons {
 	margin: 50px 5% 20px 0;
 	float: right;
@@ -224,8 +237,6 @@ html {
 	.example {
 		width: 95%;
 	}
-
-	.about,
 
 	.about{
 		margin: 0 5% 10px 0;
@@ -272,6 +283,7 @@ html {
 	
 	.example p {
 		font-size: 10px;
+		width: auto;
 	}
 }
 
