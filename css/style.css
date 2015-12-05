@@ -192,13 +192,16 @@ html {
 }
 
 #img {
-	position:relative;
-}
-
-#img>img {
-	position:absolute;
-	left: 0;
-	top: 0;
+	-webkit-transition-property: opacity;
+	   -moz-transition-property: opacity;
+	    -ms-transition-property: opacity;
+	     -o-transition-property: opacity;
+	        transition-property: opacity;
+	    -webkit-transition-duration: 200ms;
+	       -moz-transition-duration: 200ms;
+	        -ms-transition-duration: 200ms;
+	         -o-transition-duration: 200ms;
+	            transition-duration: 200ms;
 }
 
 .add-buttons {

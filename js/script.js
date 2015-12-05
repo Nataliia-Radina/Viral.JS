@@ -1,56 +1,63 @@
-var img = [
-    ["img/normal_world.png", "img/p2p_world.png"],
-    ["img/normal.png", "img/p2p.png"]
-];
+$(document).ready(function() {
+	displayNextImage();
+})
+	
+function displayNextImage() {
+	console.log(i, x);
+	console.log(img[i][x]);
+	if(x >= img[1].length){
+        x = 0;
+    } 
+	document.getElementById("img").src=img[i][x];
+	document.getElementById("img-mob").src=img[i][x];
+	x++;
+	setTimeout("displayNextImage()", 3000);
+}
 
-var currentImageIndex = 0;
-var FADE_DELAY = 3000;
-var FADE_SPEED = 200;
-var imagesSet = [];
+var i = Math.floor(Math.random()*2);
+console.log(i)
 
-var oldImageTag = {};
-var currentImageTag = {};
+x = 0;
+var img = []; 
+img[0]= [];
+img[1]= [];
+img[0][0]= "img/normal_world.png";
+img[0][1]=	"img/p2p_world.png"
+img[1][0]= "img/normal.png"
+img[1][1]=	"img/p2p.png"
 
-$(document).ready(function () {
-    imagesSet = getImagesToDisplay();
-    createTagsForImages(imagesSet);
-    setInterval(displayNextImage, FADE_DELAY);
-});
+/*
+$(document).ready(function() {
+startTimer();
+})
 
 function displayNextImage() {
-    currentImageTag = getCurrentImageTag();
-    oldImageTag = currentImageTag;
-    newImageTag = getNextImageTag();
+	console.log(img[x])
+	if(x >= img.length){
+        x = 0;
+    } 
+	document.getElementById("img").src=img[x];
+	document.getElementById("img-mob").src=img[x];
+	x++;
 
-    oldImageTag.fadeOut(FADE_SPEED);
-    newImageTag.fadeIn(FADE_SPEED);
+}
+ 
+function startTimer() {
+    setInterval(displayNextImage, 3000);
 }
 
-function getCurrentImageTag() {
-    return $('#img' + currentImageIndex);
-}
+var img = [], x = 0;
+img[0]= "img/normal_world.png";
+img[1]=	"img/p2p_world.png"
+img[2]= "img/normal.png"
+img[3]=	"img/p2p.png"
+setInterval(changeImage, 3000);
 
-function getNextImageTag() {
-    currentImageIndex = currentImageIndex < imagesSet.length - 1 ? currentImageIndex + 1 : 0;
-    return getCurrentImageTag();
+function changeImage() {
+    x = x < img.length ? x : 0;
+    $('#img').fadeOut(200, function(){
+        $(this).attr('src', img[x]).fadeIn(200);
+    })
+    x++;
 }
-
-function createTagsForImages(images) {
-    var normalContainer = $('#img');
-    var mobileContainer = $('#img-mob');
-    for (var i = 0; i < images.length; i++) {
-        var display = i === currentImageIndex ? 'block' : 'none';
-        normalContainer.append('<img id="img-mob' + i + '" style="display:' + display + ';" src="' + images[i] + '"/>');
-        mobileContainer.append('<img id="img-mob' + i + '" style="display:' + display + ';" src="' + images[i] + '"/>');
-    }
-}
-
-function getImagesToDisplay() {
-    var result = [];
-    if (Math.random() > 0.5) {
-        result = img[0];
-    } else {
-        result = img[1];
-    }
-    return result;
-}
+*/
