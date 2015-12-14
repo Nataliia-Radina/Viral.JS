@@ -1,56 +1,49 @@
-var img = [
-    ["img/normal_world.png", "img/p2p_world.png"],
-    ["img/normal.png", "img/p2p.png"]
-];
-
-var currentImageIndex = 0;
-var FADE_DELAY = 3000;
-var FADE_SPEED = 200;
-var imagesSet = [];
-
-var oldImageTag = {};
-var currentImageTag = {};
-
-$(document).ready(function () {
-    imagesSet = getImagesToDisplay();
-    createTagsForImages(imagesSet);
-    setInterval(displayNextImage, FADE_DELAY);
-});
-
-function displayNextImage() {
-    currentImageTag = getCurrentImageTag();
-    oldImageTag = currentImageTag;
-    newImageTag = getNextImageTag();
-
-    oldImageTag.fadeOut(FADE_SPEED);
-    newImageTag.fadeIn(FADE_SPEED);
+window.onload = function(){
+	createImageTag(images, "gallery");
+	createImageTag(images, "gallery-mob");
 }
 
-function getCurrentImageTag() {
-    return $('#img' + currentImageIndex);
+var DELAY = 3000;
+var images = [
+["img/p2p_world.png", "img/normal_world.png"],
+["img/p2p.png", "img/normal.png"]
+]; 
+
+function getImages() {
+	var randomIndex = Math.floor(Math.random()*2);
+	return images[randomIndex];
 }
 
-function getNextImageTag() {
-    currentImageIndex = currentImageIndex < imagesSet.length - 1 ? currentImageIndex + 1 : 0;
-    return getCurrentImageTag();
+images = getImages();
+
+function createImageTag(arr, id) {
+	var elements = [];
+	for (i = 0; i < images.length; i++) {
+		var img = document.createElement('img');
+		img.src = images[i];
+		img.id = "img"+i; 
+		document.getElementById(id).appendChild(img);
+		elements.push(img);
+		console.log(elements)
+	}
+
+	var element = document.getElementById('img1');
+
+	function hideImage() {
+		element.style.transition = "opacity 0.3s";
+		element.style.opacity = 0;
+		setTimeout(showImage, DELAY);
+		console.log(element);
+	}
+
+	function showImage() {
+		element.style.transition = "opacity 0.3s";
+		element.style.opacity = 1;
+		setTimeout(hideImage, DELAY);
+	}
+
+	setTimeout(hideImage, DELAY);
 }
 
-function createTagsForImages(images) {
-    var normalContainer = $('#img');
-    var mobileContainer = $('#img-mob');
-    for (var i = 0; i < images.length; i++) {
-        var display = i === currentImageIndex ? 'block' : 'none';
-        normalContainer.append('<img id="img-mob' + i + '" style="display:' + display + ';" src="' + images[i] + '"/>');
-        mobileContainer.append('<img id="img-mob' + i + '" style="display:' + display + ';" src="' + images[i] + '"/>');
-    }
-}
 
-function getImagesToDisplay() {
-    var result = [];
-    if (Math.random() > 0.5) {
-        result = img[0];
-    } else {
-        result = img[1];
-    }
-    return result;
-}
+
