@@ -1,9 +1,8 @@
-$(document).ready(function() {
+window.onload = function(){
 	createImageTag(images, "gallery");
 	createImageTag(images, "gallery-mob");
-})
+}
 
-var SPEED = 300;
 var DELAY = 3000;
 var images = [
 ["img/p2p_world.png", "img/normal_world.png"],
@@ -25,14 +24,21 @@ function createImageTag(arr, id) {
 		img.id = "img"+i; 
 		document.getElementById(id).appendChild(img);
 		elements.push(img);
+		console.log(elements)
 	}
+
+	var element = document.getElementById('img1');
+
 	function hideImage() {
-		$(elements[1]).fadeOut(SPEED);
+		element.style.transition = "opacity 0.3s";
+		element.style.opacity = 0;
 		setTimeout(showImage, DELAY);
+		console.log(element);
 	}
 
 	function showImage() {
-		$(elements[1]).fadeIn(SPEED);
+		element.style.transition = "opacity 0.3s";
+		element.style.opacity = 1;
 		setTimeout(hideImage, DELAY);
 	}
 
